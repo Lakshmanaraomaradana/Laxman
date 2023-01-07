@@ -14,7 +14,7 @@ body {
 #app {
   width: 100vw;
   height: 100vh;
-  background: #343541;
+  background-color:thistle;
 
   display: flex;
   flex-direction: column;
@@ -89,7 +89,7 @@ body {
 .message {
   flex: 1;
 
-  color: #dcdcdc;
+  color: #e2e0f8;
   font-size: 20px;
 
   max-width: 100%;
@@ -117,7 +117,8 @@ form {
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
-  background: #40414F;
+  background: lightskyblue;
+  border-radius: 5vh;
 
   display: flex;
   flex-direction: row;
@@ -127,7 +128,7 @@ form {
 textarea {
   width: 100%;
 
-  color: #fff;
+  color: rgb(54, 1, 1);
   font-size: 18px;
 
   padding: 10px;
