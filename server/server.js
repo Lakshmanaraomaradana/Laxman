@@ -28,11 +28,11 @@ app.post('/', async (req, res) => {
     const response = await openai.createCompletion({
       model: process.env.MODEL,
       prompt: `${prompt}`,
-      temperature: process.env.TEMPARATURE, // Higher values means the model will take more risks.
-      max_tokens: process.env.MAX_TOKENS, // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
-      top_p: process.env.TOP_P, // alternative to sampling with temperature, called nucleus sampling
-      frequency_penalty: process.env.FREQUENCY, // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
-      presence_penalty: process.env.PRESENCE, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+      temperature: parseFloat(process.env.TEMPARATURE), // Higher values means the model will take more risks.
+      max_tokens: parseFloat(process.env.MAX_TOKENS), // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
+      top_p: parseFloat(process.env.TOP_P), // alternative to sampling with temperature, called nucleus sampling
+      frequency_penalty: parseFloat(process.env.FREQUENCY), // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
+      presence_penalty: parseFloat(process.env.PRESENCE) // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
     });
 
     res.status(200).send({
